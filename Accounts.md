@@ -9,6 +9,8 @@ struct Accounts
 	int Balance;
 };
 
+
+
 int main()
 {
 	SetConsoleCP(1251);
@@ -17,6 +19,7 @@ int main()
 	int num;
 	std::string name;
 	int bal;
+	int newbal;
 	std::cout << "Введите номер счёта: " << std::endl;
 	std::cin >> num;
 	std::cout << "Введите имя владельца: " << std::endl;
@@ -26,11 +29,12 @@ int main()
 
 	Accounts bank = { num, name, bal };
 
-	std::cout << "Ваш счёт: " << bank.Number << " " << bank.AccName << " " << bank.Balance << std::endl;
+	std::cout << "Введите новый баланс: " << std::endl;
+	std::cin >> newbal;
 
+	bank.Balance = newbal;
 	
-
-
+	std::cout << "Ваш счёт: " << bank.Number << " " << bank.AccName << " " << bank.Balance << std::endl;
 
 	return EXIT_SUCCESS;
 }

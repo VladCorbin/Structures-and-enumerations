@@ -9,6 +9,15 @@ struct Accounts
 	int Balance;
 };
 
+void changeBalance(Accounts& account, int newBalance) 
+{
+    if (newBalance < 0) 
+	{
+        std::cout << "Ошибка: баланс не может быть отрицательным!" << std::endl;
+    }
+
+    account.Balance = newBalance;
+}
 
 
 int main()
@@ -32,7 +41,7 @@ int main()
 	std::cout << "Введите новый баланс: " << std::endl;
 	std::cin >> newbal;
 
-	bank.Balance = newbal;
+	changeBalance(bank, newbal);
 	
 	std::cout << "Ваш счёт: " << bank.Number << " " << bank.AccName << " " << bank.Balance << std::endl;
 
